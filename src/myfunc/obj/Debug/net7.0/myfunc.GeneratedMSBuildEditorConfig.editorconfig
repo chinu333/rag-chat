@@ -1,0 +1,15 @@
+is_global = true
+build_property.FunctionsEnableMetadataSourceGen = 
+build_property.FunctionsEnableExecutorSourceGen = false
+build_property.FunctionsAutoRegisterGeneratedFunctionsExecutor = true
+build_property.FunctionsAutoRegisterGeneratedMetadataProvider = false
+build_property.TargetFramework = net7.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = 
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = myfunc
+build_property.ProjectDir = C:\Data\Code\Semantic Kernel\semantic-kernel-rag-chat-main\semantic-kernel-rag-chat-main\src\myfunc\

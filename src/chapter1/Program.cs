@@ -1,0 +1,42 @@
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Logging;
+using Microsoft.SemanticKernel;
+using Microsoft.SemanticKernel.AI.ChatCompletion;
+
+var hostBuilder = new HostBuilder()
+    .ConfigureFunctionsWorkerDefaults();
+
+hostBuilder.ConfigureAppConfiguration((context, config) =>
+{
+    config.AddUserSecrets<Program>();
+});
+
+hostBuilder.ConfigureServices(services =>
+{
+    services.AddSingleton<IKernel>(sp =>
+    {
+        IConfiguration configuration = sp.GetRequiredService<IConfiguration>();
+        string openAiApiKey = "ee368e26186644eea636b27c564b5c08"; //configuration["OPENAI_APIKEY"];
+
+        IKernel kernel = new KernelBuilder()
+            .WithLogger(sp.GetRequiredService<ILogger<IKernel>>())
+            .Configure(config => config.AddOpenAIChatCompletionService(
+                modelId: "FurhatChat",
+                apiKey: openAiApiKey))
+            .Build();
+
+        return kernel;
+    });
+
+    services.AddSingleton<IChatCompletion>(sp =>
+    sp.GetRequiredService<IKernel>().GetService<IChatCompletion>());
+
+    const string instructions = "You are a helpful friendly assistant.";
+    services.AddSingleton<ChatHistory>(sp =>
+        sp.GetRequiredService<IChatCompletion>().CreateNewChat(instructions));
+});
+
+IHost host = hostBuilder.Build();
+host.Run();

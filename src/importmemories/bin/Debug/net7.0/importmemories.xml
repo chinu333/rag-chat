@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>importmemories</name>
+    </assembly>
+    <members>
+        <member name="T:BlingFire.BlingFireUtils">
+             <summary>
+             This is C# interface for blingfiretokdll.dll
+             
+             For API description please see blingfiretokdll.cpp comments.
+            
+             </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "T:BlingFire.BlingFireUtils2" -->
+        <member name="M:Program.Main(System.String,System.String,System.String,System.IO.FileInfo[])">
+            <summary>
+            This program imports text files into a Qdrant VectorDB using Semantic Kernel.
+            </summary>
+            <param name="memoryType">Either "qdrant" or "azurecognitivesearch"</param>
+            <param name="memoryUrl">The URL to a running Qdrant VectorDB (e.g., http://localhost:6333) or to your Azure Cognitive Search endpoint.</param>
+            <param name="collection">Name of the database collection in which to import (e.g., "mycollection").</param>
+            <param name="textFile">Text files to import.</param>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,422 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
+    <RestoreSuccess Condition=" '$(RestoreSuccess)' == '' ">True</RestoreSuccess>
+    <RestoreTool Condition=" '$(RestoreTool)' == '' ">NuGet</RestoreTool>
+    <ProjectAssetsFile Condition=" '$(ProjectAssetsFile)' == '' ">$(MSBuildThisFileDirectory)project.assets.json</ProjectAssetsFile>
+    <NuGetPackageRoot Condition=" '$(NuGetPackageRoot)' == '' ">$(UserProfile)\.nuget\packages\</NuGetPackageRoot>
+    <NuGetPackageFolders Condition=" '$(NuGetPackageFolders)' == '' ">C:\Users\cchakraborty\.nuget\packages\;C:\Program Files (x86)\Microsoft Visual Studio\Shared\NuGetPackages</NuGetPackageFolders>
+    <NuGetProjectStyle Condition=" '$(NuGetProjectStyle)' == '' ">PackageReference</NuGetProjectStyle>
+    <NuGetToolVersion Condition=" '$(NuGetToolVersion)' == '' ">6.7.0</NuGetToolVersion>
+  </PropertyGroup>
+  <ItemGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
+    <SourceRoot Include="C:\Users\cchakraborty\.nuget\packages\" />
+    <SourceRoot Include="C:\Program Files (x86)\Microsoft Visual Studio\Shared\NuGetPackages\" />
+  </ItemGroup>
+  <ItemGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
+    <Content Include="$(NuGetPackageRoot)microsoft.semantickernel.connectors.ai.openai\0.13.442.1-preview\contentFiles\any\netstandard2.0\Tokenizers\Settings\encoder.json" Condition="Exists('$(NuGetPackageRoot)microsoft.semantickernel.connectors.ai.openai\0.13.442.1-preview\contentFiles\any\netstandard2.0\Tokenizers\Settings\encoder.json')">
+      <NuGetPackageId>Microsoft.SemanticKernel.Connectors.AI.OpenAI</NuGetPackageId>
+      <NuGetPackageVersion>0.13.442.1-preview</NuGetPackageVersion>
+      <NuGetItemType>Content</NuGetItemType>
+      <Pack>false</Pack>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>Tokenizers\Settings\encoder.json</TargetPath>
+      <DestinationSubDirectory>Tokenizers\Settings\</DestinationSubDirectory>
+      <Private>True</Private>
+      <Link>Tokenizers\Settings\encoder.json</Link>
+    </Content>
+    <Content Include="$(NuGetPackageRoot)microsoft.semantickernel.connectors.ai.openai\0.13.442.1-preview\contentFiles\any\netstandard2.0\Tokenizers\Settings\vocab.bpe" Condition="Exists('$(NuGetPackageRoot)microsoft.semantickernel.connectors.ai.openai\0.13.442.1-preview\contentFiles\any\netstandard2.0\Tokenizers\Settings\vocab.bpe')">
+      <NuGetPackageId>Microsoft.SemanticKernel.Connectors.AI.OpenAI</NuGetPackageId>
+      <NuGetPackageVersion>0.13.442.1-preview</NuGetPackageVersion>
+      <NuGetItemType>Content</NuGetItemType>
+      <Pack>false</Pack>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>Tokenizers\Settings\vocab.bpe</TargetPath>
+      <DestinationSubDirectory>Tokenizers\Settings\</DestinationSubDirectory>
+      <Private>True</Private>
+      <Link>Tokenizers\Settings\vocab.bpe</Link>
+    </Content>
+  </ItemGroup>
+  <ItemGroup Condition=" '$(Language)' == 'C#' AND '$(ExcludeRestorePackageImports)' != 'true' ">
+    <Compile Include="$(NuGetPackageRoot)blingfirenuget\0.1.8\contentFiles\cs\any\BlingFireUtils.cs" Condition="Exists('$(NuGetPackageRoot)blingfirenuget\0.1.8\contentFiles\cs\any\BlingFireUtils.cs')">
+      <NuGetPackageId>BlingFireNuget</NuGetPackageId>
+      <NuGetPackageVersion>0.1.8</NuGetPackageVersion>
+      <NuGetItemType>Compile</NuGetItemType>
+      <Pack>false</Pack>
+      <Private>False</Private>
+      <Link>BlingFireUtils.cs</Link>
+    </Compile>
+    <Compile Include="$(NuGetPackageRoot)blingfirenuget\0.1.8\contentFiles\cs\any\BlingFireUtils2.cs" Condition="Exists('$(NuGetPackageRoot)blingfirenuget\0.1.8\contentFiles\cs\any\BlingFireUtils2.cs')">
+      <NuGetPackageId>BlingFireNuget</NuGetPackageId>
+      <NuGetPackageVersion>0.1.8</NuGetPackageVersion>
+      <NuGetItemType>Compile</NuGetItemType>
+      <Pack>false</Pack>
+      <Private>False</Private>
+      <Link>BlingFireUtils2.cs</Link>
+    </Compile>
+    <None Include="$(NuGetPackageRoot)blingfirenuget\0.1.8\contentFiles\cs\any\bert_base_cased_tok.bin" Condition="Exists('$(NuGetPackageRoot)blingfirenuget\0.1.8\contentFiles\cs\any\bert_base_cased_tok.bin')">
+      <NuGetPackageId>BlingFireNuget</NuGetPackageId>
+      <NuGetPackageVersion>0.1.8</NuGetPackageVersion>
+      <NuGetItemType>None</NuGetItemType>
+      <Pack>false</Pack>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>bert_base_cased_tok.bin</TargetPath>
+      <Private>True</Private>
+      <Link>bert_base_cased_tok.bin</Link>
+    </None>
+    <None Include="$(NuGetPackageRoot)blingfirenuget\0.1.8\contentFiles\cs\any\bert_base_cased_tok.i2w" Condition="Exists('$(NuGetPackageRoot)blingfirenuget\0.1.8\contentFiles\cs\any\bert_base_cased_tok.i2w')">
+      <NuGetPackageId>BlingFireNuget</NuGetPackageId>
+      <NuGetPackageVersion>0.1.8</NuGetPackageVersion>
+      <NuGetItemType>None</NuGetItemType>
+      <Pack>false</Pack>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>bert_base_cased_tok.i2w</TargetPath>
+      <Private>True</Private>
+      <Link>bert_base_cased_tok.i2w</Link>
+    </None>
+    <None Include="$(NuGetPackageRoot)blingfirenuget\0.1.8\contentFiles\cs\any\bert_base_tok.bin" Condition="Exists('$(NuGetPackageRoot)blingfirenuget\0.1.8\contentFiles\cs\any\bert_base_tok.bin')">
+      <NuGetPackageId>BlingFireNuget</NuGetPackageId>
+      <NuGetPackageVersion>0.1.8</NuGetPackageVersion>
+      <NuGetItemType>None</NuGetItemType>
+      <Pack>false</Pack>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>bert_base_tok.bin</TargetPath>
+      <Private>True</Private>
+      <Link>bert_base_tok.bin</Link>
+    </None>
+    <None Include="$(NuGetPackageRoot)blingfirenuget\0.1.8\contentFiles\cs\any\bert_base_tok.i2w" Condition="Exists('$(NuGetPackageRoot)blingfirenuget\0.1.8\contentFiles\cs\any\bert_base_tok.i2w')">
+      <NuGetPackageId>BlingFireNuget</NuGetPackageId>
+      <NuGetPackageVersion>0.1.8</NuGetPackageVersion>
+      <NuGetItemType>None</NuGetItemType>
+      <Pack>false</Pack>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>bert_base_tok.i2w</TargetPath>
+      <Private>True</Private>
+      <Link>bert_base_tok.i2w</Link>
+    </None>
+    <None Include="$(NuGetPackageRoot)blingfirenuget\0.1.8\contentFiles\cs\any\bert_chinese.bin" Condition="Exists('$(NuGetPackageRoot)blingfirenuget\0.1.8\contentFiles\cs\any\bert_chinese.bin')">
+      <NuGetPackageId>BlingFireNuget</NuGetPackageId>
+      <NuGetPackageVersion>0.1.8</NuGetPackageVersion>
+      <NuGetItemType>None</NuGetItemType>
+      <Pack>false</Pack>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>bert_chinese.bin</TargetPath>
+      <Private>True</Private>
+      <Link>bert_chinese.bin</Link>
+    </None>
+    <None Include="$(NuGetPackageRoot)blingfirenuget\0.1.8\contentFiles\cs\any\bert_chinese.i2w" Condition="Exists('$(NuGetPackageRoot)blingfirenuget\0.1.8\contentFiles\cs\any\bert_chinese.i2w')">
+      <NuGetPackageId>BlingFireNuget</NuGetPackageId>
+      <NuGetPackageVersion>0.1.8</NuGetPackageVersion>
+      <NuGetItemType>None</NuGetItemType>
+      <Pack>false</Pack>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>bert_chinese.i2w</TargetPath>
+      <Private>True</Private>
+      <Link>bert_chinese.i2w</Link>
+    </None>
+    <None Include="$(NuGetPackageRoot)blingfirenuget\0.1.8\contentFiles\cs\any\bert_multi_cased.bin" Condition="Exists('$(NuGetPackageRoot)blingfirenuget\0.1.8\contentFiles\cs\any\bert_multi_cased.bin')">
+      <NuGetPackageId>BlingFireNuget</NuGetPackageId>
+      <NuGetPackageVersion>0.1.8</NuGetPackageVersion>
+      <NuGetItemType>None</NuGetItemType>
+      <Pack>false</Pack>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>bert_multi_cased.bin</TargetPath>
+      <Private>True</Private>
+      <Link>bert_multi_cased.bin</Link>
+    </None>
+    <None Include="$(NuGetPackageRoot)blingfirenuget\0.1.8\contentFiles\cs\any\bert_multi_cased.i2w" Condition="Exists('$(NuGetPackageRoot)blingfirenuget\0.1.8\contentFiles\cs\any\bert_multi_cased.i2w')">
+      <NuGetPackageId>BlingFireNuget</NuGetPackageId>
+      <NuGetPackageVersion>0.1.8</NuGetPackageVersion>
+      <NuGetItemType>None</NuGetItemType>
+      <Pack>false</Pack>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>bert_multi_cased.i2w</TargetPath>
+      <Private>True</Private>
+      <Link>bert_multi_cased.i2w</Link>
+    </None>
+    <None Include="$(NuGetPackageRoot)blingfirenuget\0.1.8\contentFiles\cs\any\blingfiretokdll.dll" Condition="Exists('$(NuGetPackageRoot)blingfirenuget\0.1.8\contentFiles\cs\any\blingfiretokdll.dll')">
+      <NuGetPackageId>BlingFireNuget</NuGetPackageId>
+      <NuGetPackageVersion>0.1.8</NuGetPackageVersion>
+      <NuGetItemType>None</NuGetItemType>
+      <Pack>false</Pack>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>blingfiretokdll.dll</TargetPath>
+      <Private>True</Private>
+      <Link>blingfiretokdll.dll</Link>
+    </None>
+    <None Include="$(NuGetPackageRoot)blingfirenuget\0.1.8\contentFiles\cs\any\blingfiretokdll.pdb" Condition="Exists('$(NuGetPackageRoot)blingfirenuget\0.1.8\contentFiles\cs\any\blingfiretokdll.pdb')">
+      <NuGetPackageId>BlingFireNuget</NuGetPackageId>
+      <NuGetPackageVersion>0.1.8</NuGetPackageVersion>
+      <NuGetItemType>None</NuGetItemType>
+      <Pack>false</Pack>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>blingfiretokdll.pdb</TargetPath>
+      <Private>True</Private>
+      <Link>blingfiretokdll.pdb</Link>
+    </None>
+    <None Include="$(NuGetPackageRoot)blingfirenuget\0.1.8\contentFiles\cs\any\gpt2.bin" Condition="Exists('$(NuGetPackageRoot)blingfirenuget\0.1.8\contentFiles\cs\any\gpt2.bin')">
+      <NuGetPackageId>BlingFireNuget</NuGetPackageId>
+      <NuGetPackageVersion>0.1.8</NuGetPackageVersion>
+      <NuGetItemType>None</NuGetItemType>
+      <Pack>false</Pack>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>gpt2.bin</TargetPath>
+      <Private>True</Private>
+      <Link>gpt2.bin</Link>
+    </None>
+    <None Include="$(NuGetPackageRoot)blingfirenuget\0.1.8\contentFiles\cs\any\gpt2.i2w" Condition="Exists('$(NuGetPackageRoot)blingfirenuget\0.1.8\contentFiles\cs\any\gpt2.i2w')">
+      <NuGetPackageId>BlingFireNuget</NuGetPackageId>
+      <NuGetPackageVersion>0.1.8</NuGetPackageVersion>
+      <NuGetItemType>None</NuGetItemType>
+      <Pack>false</Pack>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>gpt2.i2w</TargetPath>
+      <Private>True</Private>
+      <Link>gpt2.i2w</Link>
+    </None>
+    <None Include="$(NuGetPackageRoot)blingfirenuget\0.1.8\contentFiles\cs\any\laser100k.bin" Condition="Exists('$(NuGetPackageRoot)blingfirenuget\0.1.8\contentFiles\cs\any\laser100k.bin')">
+      <NuGetPackageId>BlingFireNuget</NuGetPackageId>
+      <NuGetPackageVersion>0.1.8</NuGetPackageVersion>
+      <NuGetItemType>None</NuGetItemType>
+      <Pack>false</Pack>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>laser100k.bin</TargetPath>
+      <Private>True</Private>
+      <Link>laser100k.bin</Link>
+    </None>
+    <None Include="$(NuGetPackageRoot)blingfirenuget\0.1.8\contentFiles\cs\any\laser100k.i2w" Condition="Exists('$(NuGetPackageRoot)blingfirenuget\0.1.8\contentFiles\cs\any\laser100k.i2w')">
+      <NuGetPackageId>BlingFireNuget</NuGetPackageId>
+      <NuGetPackageVersion>0.1.8</NuGetPackageVersion>
+      <NuGetItemType>None</NuGetItemType>
+      <Pack>false</Pack>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>laser100k.i2w</TargetPath>
+      <Private>True</Private>
+      <Link>laser100k.i2w</Link>
+    </None>
+    <None Include="$(NuGetPackageRoot)blingfirenuget\0.1.8\contentFiles\cs\any\laser250k.bin" Condition="Exists('$(NuGetPackageRoot)blingfirenuget\0.1.8\contentFiles\cs\any\laser250k.bin')">
+      <NuGetPackageId>BlingFireNuget</NuGetPackageId>
+      <NuGetPackageVersion>0.1.8</NuGetPackageVersion>
+      <NuGetItemType>None</NuGetItemType>
+      <Pack>false</Pack>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>laser250k.bin</TargetPath>
+      <Private>True</Private>
+      <Link>laser250k.bin</Link>
+    </None>
+    <None Include="$(NuGetPackageRoot)blingfirenuget\0.1.8\contentFiles\cs\any\laser250k.i2w" Condition="Exists('$(NuGetPackageRoot)blingfirenuget\0.1.8\contentFiles\cs\any\laser250k.i2w')">
+      <NuGetPackageId>BlingFireNuget</NuGetPackageId>
+      <NuGetPackageVersion>0.1.8</NuGetPackageVersion>
+      <NuGetItemType>None</NuGetItemType>
+      <Pack>false</Pack>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>laser250k.i2w</TargetPath>
+      <Private>True</Private>
+      <Link>laser250k.i2w</Link>
+    </None>
+    <None Include="$(NuGetPackageRoot)blingfirenuget\0.1.8\contentFiles\cs\any\laser500k.bin" Condition="Exists('$(NuGetPackageRoot)blingfirenuget\0.1.8\contentFiles\cs\any\laser500k.bin')">
+      <NuGetPackageId>BlingFireNuget</NuGetPackageId>
+      <NuGetPackageVersion>0.1.8</NuGetPackageVersion>
+      <NuGetItemType>None</NuGetItemType>
+      <Pack>false</Pack>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>laser500k.bin</TargetPath>
+      <Private>True</Private>
+      <Link>laser500k.bin</Link>
+    </None>
+    <None Include="$(NuGetPackageRoot)blingfirenuget\0.1.8\contentFiles\cs\any\laser500k.i2w" Condition="Exists('$(NuGetPackageRoot)blingfirenuget\0.1.8\contentFiles\cs\any\laser500k.i2w')">
+      <NuGetPackageId>BlingFireNuget</NuGetPackageId>
+      <NuGetPackageVersion>0.1.8</NuGetPackageVersion>
+      <NuGetItemType>None</NuGetItemType>
+      <Pack>false</Pack>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>laser500k.i2w</TargetPath>
+      <Private>True</Private>
+      <Link>laser500k.i2w</Link>
+    </None>
+    <None Include="$(NuGetPackageRoot)blingfirenuget\0.1.8\contentFiles\cs\any\libblingfiretokdll.dylib" Condition="Exists('$(NuGetPackageRoot)blingfirenuget\0.1.8\contentFiles\cs\any\libblingfiretokdll.dylib')">
+      <NuGetPackageId>BlingFireNuget</NuGetPackageId>
+      <NuGetPackageVersion>0.1.8</NuGetPackageVersion>
+      <NuGetItemType>None</NuGetItemType>
+      <Pack>false</Pack>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>libblingfiretokdll.dylib</TargetPath>
+      <Private>True</Private>
+      <Link>libblingfiretokdll.dylib</Link>
+    </None>
+    <None Include="$(NuGetPackageRoot)blingfirenuget\0.1.8\contentFiles\cs\any\libblingfiretokdll.so" Condition="Exists('$(NuGetPackageRoot)blingfirenuget\0.1.8\contentFiles\cs\any\libblingfiretokdll.so')">
+      <NuGetPackageId>BlingFireNuget</NuGetPackageId>
+      <NuGetPackageVersion>0.1.8</NuGetPackageVersion>
+      <NuGetItemType>None</NuGetItemType>
+      <Pack>false</Pack>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>libblingfiretokdll.so</TargetPath>
+      <Private>True</Private>
+      <Link>libblingfiretokdll.so</Link>
+    </None>
+    <None Include="$(NuGetPackageRoot)blingfirenuget\0.1.8\contentFiles\cs\any\roberta.bin" Condition="Exists('$(NuGetPackageRoot)blingfirenuget\0.1.8\contentFiles\cs\any\roberta.bin')">
+      <NuGetPackageId>BlingFireNuget</NuGetPackageId>
+      <NuGetPackageVersion>0.1.8</NuGetPackageVersion>
+      <NuGetItemType>None</NuGetItemType>
+      <Pack>false</Pack>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>roberta.bin</TargetPath>
+      <Private>True</Private>
+      <Link>roberta.bin</Link>
+    </None>
+    <None Include="$(NuGetPackageRoot)blingfirenuget\0.1.8\contentFiles\cs\any\roberta.i2w" Condition="Exists('$(NuGetPackageRoot)blingfirenuget\0.1.8\contentFiles\cs\any\roberta.i2w')">
+      <NuGetPackageId>BlingFireNuget</NuGetPackageId>
+      <NuGetPackageVersion>0.1.8</NuGetPackageVersion>
+      <NuGetItemType>None</NuGetItemType>
+      <Pack>false</Pack>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>roberta.i2w</TargetPath>
+      <Private>True</Private>
+      <Link>roberta.i2w</Link>
+    </None>
+    <None Include="$(NuGetPackageRoot)blingfirenuget\0.1.8\contentFiles\cs\any\syllab.bin" Condition="Exists('$(NuGetPackageRoot)blingfirenuget\0.1.8\contentFiles\cs\any\syllab.bin')">
+      <NuGetPackageId>BlingFireNuget</NuGetPackageId>
+      <NuGetPackageVersion>0.1.8</NuGetPackageVersion>
+      <NuGetItemType>None</NuGetItemType>
+      <Pack>false</Pack>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>syllab.bin</TargetPath>
+      <Private>True</Private>
+      <Link>syllab.bin</Link>
+    </None>
+    <None Include="$(NuGetPackageRoot)blingfirenuget\0.1.8\contentFiles\cs\any\uri100k.bin" Condition="Exists('$(NuGetPackageRoot)blingfirenuget\0.1.8\contentFiles\cs\any\uri100k.bin')">
+      <NuGetPackageId>BlingFireNuget</NuGetPackageId>
+      <NuGetPackageVersion>0.1.8</NuGetPackageVersion>
+      <NuGetItemType>None</NuGetItemType>
+      <Pack>false</Pack>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>uri100k.bin</TargetPath>
+      <Private>True</Private>
+      <Link>uri100k.bin</Link>
+    </None>
+    <None Include="$(NuGetPackageRoot)blingfirenuget\0.1.8\contentFiles\cs\any\uri100k.i2w" Condition="Exists('$(NuGetPackageRoot)blingfirenuget\0.1.8\contentFiles\cs\any\uri100k.i2w')">
+      <NuGetPackageId>BlingFireNuget</NuGetPackageId>
+      <NuGetPackageVersion>0.1.8</NuGetPackageVersion>
+      <NuGetItemType>None</NuGetItemType>
+      <Pack>false</Pack>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>uri100k.i2w</TargetPath>
+      <Private>True</Private>
+      <Link>uri100k.i2w</Link>
+    </None>
+    <None Include="$(NuGetPackageRoot)blingfirenuget\0.1.8\contentFiles\cs\any\uri250k.bin" Condition="Exists('$(NuGetPackageRoot)blingfirenuget\0.1.8\contentFiles\cs\any\uri250k.bin')">
+      <NuGetPackageId>BlingFireNuget</NuGetPackageId>
+      <NuGetPackageVersion>0.1.8</NuGetPackageVersion>
+      <NuGetItemType>None</NuGetItemType>
+      <Pack>false</Pack>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>uri250k.bin</TargetPath>
+      <Private>True</Private>
+      <Link>uri250k.bin</Link>
+    </None>
+    <None Include="$(NuGetPackageRoot)blingfirenuget\0.1.8\contentFiles\cs\any\uri250k.i2w" Condition="Exists('$(NuGetPackageRoot)blingfirenuget\0.1.8\contentFiles\cs\any\uri250k.i2w')">
+      <NuGetPackageId>BlingFireNuget</NuGetPackageId>
+      <NuGetPackageVersion>0.1.8</NuGetPackageVersion>
+      <NuGetItemType>None</NuGetItemType>
+      <Pack>false</Pack>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>uri250k.i2w</TargetPath>
+      <Private>True</Private>
+      <Link>uri250k.i2w</Link>
+    </None>
+    <None Include="$(NuGetPackageRoot)blingfirenuget\0.1.8\contentFiles\cs\any\uri500k.bin" Condition="Exists('$(NuGetPackageRoot)blingfirenuget\0.1.8\contentFiles\cs\any\uri500k.bin')">
+      <NuGetPackageId>BlingFireNuget</NuGetPackageId>
+      <NuGetPackageVersion>0.1.8</NuGetPackageVersion>
+      <NuGetItemType>None</NuGetItemType>
+      <Pack>false</Pack>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>uri500k.bin</TargetPath>
+      <Private>True</Private>
+      <Link>uri500k.bin</Link>
+    </None>
+    <None Include="$(NuGetPackageRoot)blingfirenuget\0.1.8\contentFiles\cs\any\uri500k.i2w" Condition="Exists('$(NuGetPackageRoot)blingfirenuget\0.1.8\contentFiles\cs\any\uri500k.i2w')">
+      <NuGetPackageId>BlingFireNuget</NuGetPackageId>
+      <NuGetPackageVersion>0.1.8</NuGetPackageVersion>
+      <NuGetItemType>None</NuGetItemType>
+      <Pack>false</Pack>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>uri500k.i2w</TargetPath>
+      <Private>True</Private>
+      <Link>uri500k.i2w</Link>
+    </None>
+    <None Include="$(NuGetPackageRoot)blingfirenuget\0.1.8\contentFiles\cs\any\wbd_chuni.bin" Condition="Exists('$(NuGetPackageRoot)blingfirenuget\0.1.8\contentFiles\cs\any\wbd_chuni.bin')">
+      <NuGetPackageId>BlingFireNuget</NuGetPackageId>
+      <NuGetPackageVersion>0.1.8</NuGetPackageVersion>
+      <NuGetItemType>None</NuGetItemType>
+      <Pack>false</Pack>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>wbd_chuni.bin</TargetPath>
+      <Private>True</Private>
+      <Link>wbd_chuni.bin</Link>
+    </None>
+    <None Include="$(NuGetPackageRoot)blingfirenuget\0.1.8\contentFiles\cs\any\xlm_roberta_base.bin" Condition="Exists('$(NuGetPackageRoot)blingfirenuget\0.1.8\contentFiles\cs\any\xlm_roberta_base.bin')">
+      <NuGetPackageId>BlingFireNuget</NuGetPackageId>
+      <NuGetPackageVersion>0.1.8</NuGetPackageVersion>
+      <NuGetItemType>None</NuGetItemType>
+      <Pack>false</Pack>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>xlm_roberta_base.bin</TargetPath>
+      <Private>True</Private>
+      <Link>xlm_roberta_base.bin</Link>
+    </None>
+    <None Include="$(NuGetPackageRoot)blingfirenuget\0.1.8\contentFiles\cs\any\xlm_roberta_base.i2w" Condition="Exists('$(NuGetPackageRoot)blingfirenuget\0.1.8\contentFiles\cs\any\xlm_roberta_base.i2w')">
+      <NuGetPackageId>BlingFireNuget</NuGetPackageId>
+      <NuGetPackageVersion>0.1.8</NuGetPackageVersion>
+      <NuGetItemType>None</NuGetItemType>
+      <Pack>false</Pack>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>xlm_roberta_base.i2w</TargetPath>
+      <Private>True</Private>
+      <Link>xlm_roberta_base.i2w</Link>
+    </None>
+    <None Include="$(NuGetPackageRoot)blingfirenuget\0.1.8\contentFiles\cs\any\xlnet.bin" Condition="Exists('$(NuGetPackageRoot)blingfirenuget\0.1.8\contentFiles\cs\any\xlnet.bin')">
+      <NuGetPackageId>BlingFireNuget</NuGetPackageId>
+      <NuGetPackageVersion>0.1.8</NuGetPackageVersion>
+      <NuGetItemType>None</NuGetItemType>
+      <Pack>false</Pack>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>xlnet.bin</TargetPath>
+      <Private>True</Private>
+      <Link>xlnet.bin</Link>
+    </None>
+    <None Include="$(NuGetPackageRoot)blingfirenuget\0.1.8\contentFiles\cs\any\xlnet.i2w" Condition="Exists('$(NuGetPackageRoot)blingfirenuget\0.1.8\contentFiles\cs\any\xlnet.i2w')">
+      <NuGetPackageId>BlingFireNuget</NuGetPackageId>
+      <NuGetPackageVersion>0.1.8</NuGetPackageVersion>
+      <NuGetItemType>None</NuGetItemType>
+      <Pack>false</Pack>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>xlnet.i2w</TargetPath>
+      <Private>True</Private>
+      <Link>xlnet.i2w</Link>
+    </None>
+    <None Include="$(NuGetPackageRoot)blingfirenuget\0.1.8\contentFiles\cs\any\xlnet_nonorm.bin" Condition="Exists('$(NuGetPackageRoot)blingfirenuget\0.1.8\contentFiles\cs\any\xlnet_nonorm.bin')">
+      <NuGetPackageId>BlingFireNuget</NuGetPackageId>
+      <NuGetPackageVersion>0.1.8</NuGetPackageVersion>
+      <NuGetItemType>None</NuGetItemType>
+      <Pack>false</Pack>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>xlnet_nonorm.bin</TargetPath>
+      <Private>True</Private>
+      <Link>xlnet_nonorm.bin</Link>
+    </None>
+    <None Include="$(NuGetPackageRoot)blingfirenuget\0.1.8\contentFiles\cs\any\xlnet_nonorm.i2w" Condition="Exists('$(NuGetPackageRoot)blingfirenuget\0.1.8\contentFiles\cs\any\xlnet_nonorm.i2w')">
+      <NuGetPackageId>BlingFireNuget</NuGetPackageId>
+      <NuGetPackageVersion>0.1.8</NuGetPackageVersion>
+      <NuGetItemType>None</NuGetItemType>
+      <Pack>false</Pack>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>xlnet_nonorm.i2w</TargetPath>
+      <Private>True</Private>
+      <Link>xlnet_nonorm.i2w</Link>
+    </None>
+  </ItemGroup>
+  <ImportGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
+    <Import Project="$(NuGetPackageRoot)system.commandline.dragonfruit\0.4.0-alpha.22272.1\build\netstandard2.0\System.CommandLine.DragonFruit.props" Condition="Exists('$(NuGetPackageRoot)system.commandline.dragonfruit\0.4.0-alpha.22272.1\build\netstandard2.0\System.CommandLine.DragonFruit.props')" />
+    <Import Project="$(NuGetPackageRoot)microsoft.extensions.configuration.usersecrets\7.0.0\buildTransitive\net6.0\Microsoft.Extensions.Configuration.UserSecrets.props" Condition="Exists('$(NuGetPackageRoot)microsoft.extensions.configuration.usersecrets\7.0.0\buildTransitive\net6.0\Microsoft.Extensions.Configuration.UserSecrets.props')" />
+  </ImportGroup>
+</Project>

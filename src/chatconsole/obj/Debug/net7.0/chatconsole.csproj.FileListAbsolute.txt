@@ -1,0 +1,14 @@
+C:\Data\Code\Semantic Kernel\semantic-kernel-rag-chat-main\semantic-kernel-rag-chat-main\src\chatconsole\bin\Debug\net7.0\chatconsole.exe
+C:\Data\Code\Semantic Kernel\semantic-kernel-rag-chat-main\semantic-kernel-rag-chat-main\src\chatconsole\bin\Debug\net7.0\chatconsole.deps.json
+C:\Data\Code\Semantic Kernel\semantic-kernel-rag-chat-main\semantic-kernel-rag-chat-main\src\chatconsole\bin\Debug\net7.0\chatconsole.runtimeconfig.json
+C:\Data\Code\Semantic Kernel\semantic-kernel-rag-chat-main\semantic-kernel-rag-chat-main\src\chatconsole\bin\Debug\net7.0\chatconsole.dll
+C:\Data\Code\Semantic Kernel\semantic-kernel-rag-chat-main\semantic-kernel-rag-chat-main\src\chatconsole\bin\Debug\net7.0\chatconsole.pdb
+C:\Data\Code\Semantic Kernel\semantic-kernel-rag-chat-main\semantic-kernel-rag-chat-main\src\chatconsole\obj\Debug\net7.0\chatconsole.GeneratedMSBuildEditorConfig.editorconfig
+C:\Data\Code\Semantic Kernel\semantic-kernel-rag-chat-main\semantic-kernel-rag-chat-main\src\chatconsole\obj\Debug\net7.0\chatconsole.AssemblyInfoInputs.cache
+C:\Data\Code\Semantic Kernel\semantic-kernel-rag-chat-main\semantic-kernel-rag-chat-main\src\chatconsole\obj\Debug\net7.0\chatconsole.AssemblyInfo.cs
+C:\Data\Code\Semantic Kernel\semantic-kernel-rag-chat-main\semantic-kernel-rag-chat-main\src\chatconsole\obj\Debug\net7.0\chatconsole.csproj.CoreCompileInputs.cache
+C:\Data\Code\Semantic Kernel\semantic-kernel-rag-chat-main\semantic-kernel-rag-chat-main\src\chatconsole\obj\Debug\net7.0\chatconsole.dll
+C:\Data\Code\Semantic Kernel\semantic-kernel-rag-chat-main\semantic-kernel-rag-chat-main\src\chatconsole\obj\Debug\net7.0\refint\chatconsole.dll
+C:\Data\Code\Semantic Kernel\semantic-kernel-rag-chat-main\semantic-kernel-rag-chat-main\src\chatconsole\obj\Debug\net7.0\chatconsole.pdb
+C:\Data\Code\Semantic Kernel\semantic-kernel-rag-chat-main\semantic-kernel-rag-chat-main\src\chatconsole\obj\Debug\net7.0\chatconsole.genruntimeconfig.cache
+C:\Data\Code\Semantic Kernel\semantic-kernel-rag-chat-main\semantic-kernel-rag-chat-main\src\chatconsole\obj\Debug\net7.0\ref\chatconsole.dll
