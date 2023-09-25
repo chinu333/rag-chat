@@ -47,3 +47,48 @@ git clone https://github.com/chinu333/rag-chat.git
 
     Next we'll add a 'knowledge base' to the chat to help answer questions such as those above more accurately.
 
+
+# Memories of Enterprise Data
+Semantic Kernel's memory stores are used to integrate data from your knowledge base into AI interactions.
+Any data can be added to a knowledge base and you have full control of that data and who it is shared with.
+SK uses [embeddings](https://learn.microsoft.com/en-us/azure/ai-services/openai/tutorials/embeddings?tabs=command-line) to encode data and store it in a 
+vector database. Using a vector database also allows us to use vector search engines to quickly find the most 
+relevant data for a given query that we then share with the AI. In this chapter, we'll add a memory store to 
+our chat function, import the Microsoft revenue data, and use it to answer the question from Chapter 1.
+
+## Configure your environment
+Before you get started, make sure you have the following additional requirements in place:
+- [Docker Desktop](https://www.docker.com/products/docker-desktop) for hosting the [Qdrant](https://github.com/qdrant/qdrant) vector search engine.
+   > Note that a different vector store, such as Pinecone or Weviate, could be leveraged.
+
+## Deploy Qdrant VectorDB and Populate Data
+In this section we deploy the Qdrant vector database locally and populate it with example data (i.e., Microsoft's 2022 10-K financial report). This will take approximately 15 minutes to import and will use OpenAI’s embedding generation service to create embeddings for the 10-K.
+
+1. Start Docker Desktop and wait until it is running.
+
+1. Open a terminal and use Docker to pull down the container image for Qdrant.
+    ```bash
+    docker pull qdrant/qdrant
+    ```
+
+1. Change directory to the root of this repo (e.g., `rag-chat`) and create a `./data/qdrant` directory for Qdrant to use as persistent storage.
+   Then start the Qdrant container on port `6333` using the `./data/qdrant` folder as the persistent storage location.
+    ```bash
+    mkdir ./data/qdrant
+    docker run --name mychat -p 6333:6333 -v "$(pwd)/data/qdrant:/qdrant/storage" qdrant/qdrant
+    ```
+    > To stop the container, in another terminal window run `docker container stop mychat; docker container rm mychat;`.
+
+1. Open a second terminal and change directory to the `importmemories` project folder in this repo (e.g., `rag-chat/src/importmemories`). Run the `importmemories` tool with the command below to populate the vector database with your data.
+    > Make sure the `--collection` argument matches the `collectionName` variable in the `SearchMemoriesAsync` method above.
+    
+    > **Note:** This may take several minutes to several hours depending on the size of your data. This repo contains 
+      Microsoft's 2022 10-K financial report data as an example which should normally take about 15 minutes to import.
+        
+	```bash
+    dotnet run -- --memory-type qdrant --memory-url http://localhost:6333 --collection ms10k --text-file ../../data/ms10k.txt
+	```
+    > When importing your own data, try to import all files at the same time using multiple `--text-file` arguments. 
+    > This example leverages incremental indexes which are best constructed when all data is present. 
+    
+    > If you want to reset the memory store, delete and recreate the directory in step 2, or create a new directory to use.
