@@ -92,3 +92,34 @@ In this section we deploy the Qdrant vector database locally and populate it wit
     > This example leverages incremental indexes which are best constructed when all data is present. 
     
     > If you want to reset the memory store, delete and recreate the directory in step 2, or create a new directory to use.
+
+## Run the function locally
+1. With Qdrant running and populated, run your Azure Function locally by opening a terminal, changing directory to your Azure Function project (e.g., `rag-chat/src/myfunc`), and starting the function by running
+    ```bash
+    func start
+    ```
+    > Make a note of the URL displayed (e.g., `http://localhost:7071/api/MyChatFunction`).
+
+1. Start the test console application
+   Open a second terminal and change directory to the `chatconsole` project folder (e.g., `rag-chat/src/chatconsole`) and run the application using the Azure Function URL.
+   ```bash
+   dotnet run http://localhost:7071/api/MyChatFunction
+   ```
+1. Type a message and press enter to verify that we are able to chat with the AI!
+    ```
+    Input: Hello, how are you?
+    AI: Hello! As an AI language model, I don't have feelings, but I'm functioning properly and ready to 
+    assist you. How can I help you today?
+    ```
+   
+ 1. Now let's try ask the same question from before about Microsoft's 2022 revenue
+    ```
+    Input: What was Microsoft's cloud revenue for 2022?
+    AI: Microsoft's cloud revenue for 2022 was $91.2 billion.
+    ```
+    > The AI now has the ability to search through the Microsoft 10-K financial report and find the answer to our question.
+    > Let's try another...
+    ```
+    Input: Did linkedin's revenue grow in 2022?
+    AI: Yes, LinkedIn's revenue grew in 2022. It increased by $3.5 billion or 34% driven by a strong job 
+    market in the Talent Solutions business and advertising demand in the Marketing Solutions business.
