@@ -17,7 +17,7 @@ git clone https://github.com/chinu333/rag-chat.git
 ```
 
 ## Configure Keys/Endpoints
-Congigure keys/endpoints in following placses:
+Congigure keys/endpoints in following places:
 - src/myfunc/Program.cs
 - src/importmemories/Program.cs
 
