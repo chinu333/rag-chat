@@ -16,6 +16,12 @@ Then, open a terminal and clone this repo with the following command:
 git clone https://github.com/chinu333/rag-chat.git
 ```
 
+## Configure Keys/Endpoints
+Congigure keys/endpoints in following placses:
+- src/myfunc/Program.cs
+- src/importmemories/Programs.cs
+
+
 ## Run the function locally
 1. Run your Azure Function locally by opening a terminal, changing directory to your Azure Function project (e.g., `rag-chat/src/myfunc`), and starting the function by running
     ```bash
