@@ -21,7 +21,7 @@ hostBuilder.ConfigureServices(services =>
     {
         // Retrieve the OpenAI API key from the configuration.
         IConfiguration configuration = sp.GetRequiredService<IConfiguration>();
-        string openAiApiKey = "ee368e26186644eea636b27c564b5c08"; //configuration["OPENAI_APIKEY"];
+        string openAiApiKey = ""; //configuration["OPENAI_APIKEY"];
 
         QdrantMemoryStore memoryStore = new QdrantMemoryStore(
             host: "http://localhost",
@@ -30,27 +30,22 @@ hostBuilder.ConfigureServices(services =>
             logger: sp.GetRequiredService<ILogger<QdrantMemoryStore>>());
 
         AzureCognitiveSearchMemory memory = new AzureCognitiveSearchMemory(
-            "https://openaicogsearchmtc.search.windows.net",
-            "r1BhoGzrXf0i1khp4QvZRG3blGTU8emp9NeJxjiwtQAzSeCcBgTr"
-        );
-
-        AzureCognitiveSearchMemory csmemory = new AzureCognitiveSearchMemory(
-            "https://cs-mtcatl.search.windows.net",
-            "QtfU62WeY5rx27SIY46adertuAqxiTgkAy0VzqzqC5AzSeDd4Yfb"
+            "ENDPOINT",
+            "KEY"
         );
 
 
         IKernel kernel = new KernelBuilder()
             .WithLogger(sp.GetRequiredService<ILogger<IKernel>>())
             .Configure(config => config.AddAzureChatCompletionService(
-                deploymentName: "FurhatChat",
-                endpoint: "https://openaimtcdemoinstance.openai.azure.com/",
+                deploymentName: "DEPLOYMENT NAME",
+                endpoint: "ENDPOINT",
                 apiKey: openAiApiKey))
-            .Configure(c => c.AddAzureTextEmbeddingGenerationService(
-                deploymentName: "text-embedding-ada-002",
-                endpoint: "https://openaimtcdemoinstance.openai.azure.com/",
-                apiKey: openAiApiKey))
-            .WithMemoryStorage(memoryStore)
+            // .Configure(c => c.AddAzureTextEmbeddingGenerationService(
+            //     deploymentName: "text-embedding-ada-002",
+            //     endpoint: "ENDPOINT",
+            //     apiKey: openAiApiKey))
+            // .WithMemoryStorage(memoryStore)
             // .WithMemory(memory)
             .Build();
 

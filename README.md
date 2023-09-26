@@ -19,7 +19,7 @@ git clone https://github.com/chinu333/rag-chat.git
 ## Configure Keys/Endpoints
 Congigure keys/endpoints in following placses:
 - src/myfunc/Program.cs
-- src/importmemories/Programs.cs
+- src/importmemories/Program.cs
 
 
 ## Run the function locally

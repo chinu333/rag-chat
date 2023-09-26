@@ -30,7 +30,7 @@ internal class Program
         if (memoryType.Equals("qdrant", StringComparison.InvariantCultureIgnoreCase))
         {
             // Get the OpenAI API key from the configuration.
-            string? openAiApiKey = "ee368e26186644eea636b27c564b5c08"; //config["OPENAI_APIKEY"];
+            string? openAiApiKey = ""; //config["AZURE OPENAI_APIKEY"];
 
             if (string.IsNullOrWhiteSpace(openAiApiKey))
             {
@@ -49,7 +49,7 @@ internal class Program
             kernel = new KernelBuilder()
                 .Configure(c => c.AddAzureTextEmbeddingGenerationService(
                     deploymentName: "text-embedding-ada-002",
-                    endpoint: "https://openaimtcdemoinstance.openai.azure.com/",
+                    endpoint: "ENDPOINT",
                     apiKey: openAiApiKey))
                 .WithMemoryStorage(memoryStore)
                 .Build();
@@ -59,7 +59,7 @@ internal class Program
         {
             // Get the Azure Cognitive Search API key from the environment.
             // string? azureCognitiveSearchApiKey = config["AZURE_COGNITIVE_SEARCH_APIKEY"];
-            string? azureCognitiveSearchApiKey ="r1BhoGzrXf0i1khp4QvZRG3blGTU8emp9NeJxjiwtQAzSeCcBgTr";
+            string? azureCognitiveSearchApiKey ="AZURE_COGNITIVE_SEARCH_APIKEY";
 
             if (string.IsNullOrWhiteSpace(azureCognitiveSearchApiKey))
             {

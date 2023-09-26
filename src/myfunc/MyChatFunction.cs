@@ -51,9 +51,7 @@ namespace My.MyChatFunction
             result.Append("The below is relevant information.\n[START INFO]");
             
             // Search for memories that are similar to the user's input.
-            // const string memoryCollectionName = "ms10k";
-            const string memoryCollectionName = "mohawkemails";
-            // const string memoryCollectionName = "mtcatlvs";
+            const string memoryCollectionName = "ms10k";
             IAsyncEnumerable<MemoryQueryResult> queryResults = 
                 kernel.Memory.SearchAsync(memoryCollectionName, query, limit: 3, minRelevanceScore: 0.77);
 
