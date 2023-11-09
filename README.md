@@ -41,7 +41,7 @@ Now close and reopen Visual Studio Code, this time opening the `rag-chat` folder
     In addition, use the commands below (optional) to configure .NET User Secrets and then securely store your OpenAI API key.
     ```bash
     dotnet add package Microsoft.Extensions.Configuration.UserSecrets
-    dotnet user-secrets init --id semantic-kernel-rag-chat
+    dotnet user-secrets init --id rag-chat
     dotnet user-secrets set "AZURE_OPENAI_APIKEY" "<your Azure OpenAI API key>"
     ```
 
@@ -256,7 +256,7 @@ Any data can be added to a knowledge base and you have full control of that data
 SK uses [embeddings](https://learn.microsoft.com/en-us/azure/ai-services/openai/tutorials/embeddings?tabs=command-line) to encode data and store it in a 
 vector database. Using a vector database also allows us to use vector search engines to quickly find the most 
 relevant data for a given query that we then share with the AI. In this chapter, we'll add a memory store to 
-our chat function, import the Microsoft revenue data, and use it to answer the question from Chapter 1.
+our chat function, import the Microsoft revenue data, and use it to answer the question.
 
 ## Configure your environment
 Before you get started, make sure you have the following additional requirements in place:
