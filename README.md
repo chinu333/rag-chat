@@ -38,7 +38,7 @@ Now close and reopen Visual Studio Code, this time opening the `rag-chat` folder
     dotnet add package Microsoft.SemanticKernel --prerelease -v 0.14.547.1-preview
     ```
 
-    In addition, use the commands below to configure .NET User Secrets and then securely store your OpenAI API key.
+    In addition, use the commands below (optional) to configure .NET User Secrets and then securely store your OpenAI API key.
     ```bash
     dotnet add package Microsoft.Extensions.Configuration.UserSecrets
     dotnet user-secrets init --id semantic-kernel-rag-chat
@@ -47,7 +47,7 @@ Now close and reopen Visual Studio Code, this time opening the `rag-chat` folder
 
     > Make sure to specify `rag-chat` as the `--id` parameter. This will enable you to access your secrets from any of the projects in this repository.
 
-    1. Back in your Azure Function project in Visual Studio Code, open the `Program.cs` and `MyChatFunction.cs` file and replace everything in the file with the content below.
+1. Back in your Azure Function project in Visual Studio Code, open the `Program.cs` and `MyChatFunction.cs` file and replace everything in the file with the content below.
 
 1. The complete code files (with additional comments).
     <details>
