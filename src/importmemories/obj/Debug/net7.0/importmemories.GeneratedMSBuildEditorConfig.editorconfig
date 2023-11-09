@@ -8,4 +8,4 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = importmemories
-build_property.ProjectDir = C:\Data\Code\Semantic Kernel\semantic-kernel-rag-chat-main\semantic-kernel-rag-chat-main\src\importmemories\
+build_property.ProjectDir = c:\Data\Code\Semantic Kernel\rag-chat\src\importmemories\

@@ -15,6 +15,202 @@ Then, open a terminal and clone this repo with the following command:
 ```bash
 git clone https://github.com/chinu333/rag-chat.git
 ```
+## Create an Azure Function project
+1. Open a new Visual Studio Code window and click on the Azure extension (or press `SHIFT+ALT+A`).
+1. Mouse-over `WORKSPACE` (in the lower left pane) and select `Create Function` (i.e., +⚡) to create a new local Azure function project.
+1. Select `Browse` and create a folder called `myfunc` inside the cloned repo's `src` directory to house your Azure Function code (e.g., `rag-chat/src/myfunc`). Then use the selections below when creating the project:
+
+   | Selection       | Value                       |
+   | ---------       | -----                       |
+   | Language        | `C#`                        |
+   | Runtime         | `.NET 7 Isolated`           |
+   | Template        | `Http trigger`              |
+   | Function name   | `MyChatFunction`            |
+   | Namespace       | `My.MyChatFunction`         |
+   | Access rights   | `Function`                  |
+
+Now close and reopen Visual Studio Code, this time opening the `rag-chat` folder so you can view and interact with the entire repository.
+
+## Add Semantic Kernel to your Azure Function
+1. Open a terminal window, change to the directory with your Azure Function project file (e.g., `rag-chat/src/myfunc`), 
+    and run the `dotnet` command below to add the Semantic Kernel NuGet package to your project.
+    ```bash
+    dotnet add package Microsoft.SemanticKernel --prerelease -v 0.14.547.1-preview
+    ```
+
+    In addition, use the commands below to configure .NET User Secrets and then securely store your OpenAI API key.
+    ```bash
+    dotnet add package Microsoft.Extensions.Configuration.UserSecrets
+    dotnet user-secrets init --id semantic-kernel-rag-chat
+    dotnet user-secrets set "AZURE_OPENAI_APIKEY" "<your Azure OpenAI API key>"
+    ```
+
+    > Make sure to specify `rag-chat` as the `--id` parameter. This will enable you to access your secrets from any of the projects in this repository.
+
+    1. Back in your Azure Function project in Visual Studio Code, open the `Program.cs` and `MyChatFunction.cs` file and replace everything in the file with the content below.
+
+1. The complete code files (with additional comments).
+    <details>
+    <summary>Program.cs</summary>
+
+    ```csharp
+    using Microsoft.Extensions.Configuration;
+    using Microsoft.Extensions.DependencyInjection;
+    using Microsoft.Extensions.Hosting;
+    using Microsoft.Extensions.Logging;
+    using Microsoft.SemanticKernel;
+    using Microsoft.SemanticKernel.AI.ChatCompletion;
+    using Microsoft.SemanticKernel.Connectors.Memory.Qdrant;
+    using Microsoft.SemanticKernel.Connectors.Memory.AzureCognitiveSearch;
+
+    var hostBuilder = new HostBuilder()
+        .ConfigureFunctionsWorkerDefaults();
+
+    hostBuilder.ConfigureAppConfiguration((context, config) =>
+    {
+        config.AddUserSecrets<Program>();
+    });
+
+    hostBuilder.ConfigureServices(services =>
+    {
+        services.AddSingleton<IKernel>(sp =>
+        {
+            // Retrieve the OpenAI API key from the configuration.
+            IConfiguration configuration = sp.GetRequiredService<IConfiguration>();
+            string openAiApiKey = ""; //configuration["OPENAI_APIKEY"];
+
+            QdrantMemoryStore memoryStore = new QdrantMemoryStore(
+                host: "http://localhost",
+                port: 6333,
+                vectorSize: 1536,
+                logger: sp.GetRequiredService<ILogger<QdrantMemoryStore>>());
+
+            AzureCognitiveSearchMemory memory = new AzureCognitiveSearchMemory(
+                "ENDPOINT",
+                "KEY"
+            );
+
+
+            IKernel kernel = new KernelBuilder()
+                .WithLogger(sp.GetRequiredService<ILogger<IKernel>>())
+                .Configure(config => config.AddAzureChatCompletionService(
+                    deploymentName: "DEPLOYMENT NAME",
+                    endpoint: "ENDPOINT",
+                    apiKey: openAiApiKey))
+                // .Configure(c => c.AddAzureTextEmbeddingGenerationService(
+                //     deploymentName: "text-embedding-ada-002",
+                //     endpoint: "ENDPOINT",
+                //     apiKey: openAiApiKey))
+                // .WithMemoryStorage(memoryStore)
+                // .WithMemory(memory)
+                .Build();
+
+            return kernel;
+        });
+
+        // Provide a chat completion service client to our function.
+        services.AddSingleton<IChatCompletion>(sp =>
+            sp.GetRequiredService<IKernel>().GetService<IChatCompletion>());
+
+        // Provide a persistant in-memory chat history store with the 
+        // initial ChatGPT system message.
+        const string instructions = "You are a helpful friendly assistant.";
+        services.AddSingleton<ChatHistory>(sp =>
+            sp.GetRequiredService<IChatCompletion>().CreateNewChat(instructions));
+    });
+
+    hostBuilder.Build().Run();
+
+    ```
+    </details>
+
+    <details>
+    <summary>MyChatFunction.cs</summary>
+
+    ```csharp
+    using System.Net;
+    using System.Text;
+    using Microsoft.Azure.Functions.Worker;
+    using Microsoft.Azure.Functions.Worker.Http;
+    using Microsoft.Extensions.Logging;
+    using Microsoft.SemanticKernel.AI.ChatCompletion;
+    using Microsoft.SemanticKernel.Memory;
+    using Microsoft.SemanticKernel;
+
+    namespace My.MyChatFunction
+    {
+        public class MyChatFunction
+        {
+            private readonly ILogger _logger;
+            private readonly IKernel _kernel;
+            private readonly IChatCompletion _chat;
+            private readonly ChatHistory _chatHistory;
+
+            public MyChatFunction(ILoggerFactory loggerFactory, IKernel kernel, ChatHistory chatHistory, IChatCompletion chat)
+            {
+                _logger = loggerFactory.CreateLogger<MyChatFunction>();
+                _kernel = kernel;
+                _chat = chat;
+                _chatHistory = chatHistory;
+            }
+
+            [Function("MyChatFunction")]
+            public async Task<HttpResponseData> Run([HttpTrigger(AuthorizationLevel.Function, "post")] HttpRequestData req)
+            {
+                // Add the user's chat message to the history.
+                // _chatHistory!.AddMessage(ChatHistory.AuthorRoles.User, await req.ReadAsStringAsync() ?? string.Empty);
+
+                string message = await SearchMemoriesAsync(_kernel, await req.ReadAsStringAsync() ?? string.Empty);
+                _chatHistory!.AddMessage(ChatHistory.AuthorRoles.User, message);
+
+                // Send the chat history to the AI and receive a reply.
+                string reply = await _chat.GenerateMessageAsync(_chatHistory, new ChatRequestSettings());
+
+                // Add the AI's reply to the chat history for next time.
+                _chatHistory.AddMessage(ChatHistory.AuthorRoles.Assistant, reply);
+
+                // Send the AI's response back to the caller.
+                HttpResponseData response = req.CreateResponse(HttpStatusCode.OK);
+                response.WriteString(reply);
+                return response;
+            }
+
+            private async Task<string> SearchMemoriesAsync(IKernel kernel, string query)
+            {
+                StringBuilder result = new StringBuilder();
+                result.Append("The below is relevant information.\n[START INFO]");
+                
+                // Search for memories that are similar to the user's input.
+                const string memoryCollectionName = "ms10k";
+                IAsyncEnumerable<MemoryQueryResult> queryResults = 
+                    kernel.Memory.SearchAsync(memoryCollectionName, query, limit: 3, minRelevanceScore: 0.77);
+
+                // For each memory found, try to get previous and next memories.
+                await foreach (MemoryQueryResult r in queryResults)
+                {
+                    int id = int.Parse(r.Metadata.Id);
+                    MemoryQueryResult? rb2 = await kernel.Memory.GetAsync(memoryCollectionName, (id - 2).ToString());
+                    MemoryQueryResult? rb = await kernel.Memory.GetAsync(memoryCollectionName, (id - 1).ToString());
+                    MemoryQueryResult? ra = await kernel.Memory.GetAsync(memoryCollectionName, (id + 1).ToString());
+                    MemoryQueryResult? ra2 = await kernel.Memory.GetAsync(memoryCollectionName, (id + 2).ToString());
+
+                    if (rb2 != null) result.Append("\n " + rb2.Metadata.Id + ": " + rb2.Metadata.Description + "\n");
+                    if (rb != null) result.Append("\n " + rb.Metadata.Description + "\n");
+                    if (r != null) result.Append("\n " + r.Metadata.Description + "\n");
+                    if (ra != null) result.Append("\n " + ra.Metadata.Description + "\n");
+                    if (ra2 != null) result.Append("\n " + ra2.Metadata.Id + ": " + ra2.Metadata.Description + "\n");
+                }
+
+                result.Append("\n[END INFO]");
+                result.Append($"\n{query}");
+
+                return result.ToString();
+            }        
+        }
+    }
+    ```
+    </details>
+
 
 ## Configure Keys/Endpoints
 Congigure keys/endpoints in following places:
